@@ -1,0 +1,82 @@
+package quanlysinhvien;
+
+import java.text.DecimalFormat;
+
+/**
+ *
+ * @author huy4205
+ */
+public class SinhVien {
+
+    private String maSV;
+    private String hoTen;
+    private Float diemAnh;
+    private Float diemTin;
+    private Float diemGDTC;
+
+    public SinhVien() {
+    }
+
+    public SinhVien(String maSV, String hoTen, Float diemAnh, Float diemTin, Float diemGDTC) {
+        this.maSV = maSV;
+        this.hoTen = hoTen;
+        this.diemAnh = diemAnh;
+        this.diemTin = diemTin;
+        this.diemGDTC = diemGDTC;
+    }
+
+    public String getMaSV() {
+        return maSV;
+    }
+
+    public void setMaSV(String maSV) {
+        this.maSV = maSV;
+    }
+
+    public String getHoTen() {
+        return hoTen;
+    }
+
+    public void setHoTen(String hoTen) {
+        this.hoTen = hoTen;
+    }
+
+    public Float getDiemAnh() {
+        return diemAnh;
+    }
+
+    public void setDiemAnh(Float diemAnh) {
+        this.diemAnh = diemAnh;
+    }
+
+    public Float getDiemTin() {
+        return diemTin;
+    }
+
+    public void setDiemTin(Float diemTin) {
+        this.diemTin = diemTin;
+    }
+
+    public Float getDiemGDTC() {
+        return diemGDTC;
+    }
+
+    public void setDiemGDTC(Float diemGDTC) {
+        this.diemGDTC = diemGDTC;
+    }
+
+    public Float diemTrungBinh() {
+
+        return (this.diemAnh + this.diemGDTC + this.diemTin) / 3;
+//        float diemTB = (this.diemAnh + this.diemGDTC + this.diemTin) / 3;
+//        DecimalFormat df = new DecimalFormat("#.##");
+//        return Float.parseFloat(df.format(diemTB));
+    }
+
+    @Override
+    public String toString() {
+        return maSV + "," + hoTen + "," + diemAnh + "," + diemTin + "," + diemGDTC + "," + diemTrungBinh();
+//        DecimalFormat df = new DecimalFormat("#.##");
+//        return maSV + "," + hoTen + "," + diemAnh + "," + diemTin + "," + diemGDTC + "," + df.format(diemTrungBinh());
+    }
+}
